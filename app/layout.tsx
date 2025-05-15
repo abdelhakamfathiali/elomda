@@ -28,12 +28,12 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <Layout>
           <Header />
-          <main className="w-full h-full  overflow-hidden ">
+          <main className="w-full h-full  ">
             <SidebarProvider>
               <div className=" sm:hidden md:hidden lg:inline-block h-full mt-0 ">
                 <AppSidebar className="" />
               </div>
-              <div className="flex w-full h-full flex-col justify-center overflow-hidden p-2 ">
+              <div className="flex w-full h-full flex-col justify-center  p-2 ">
                 <div className="w-full h-full p-5">{children}</div>
 
                 <Footer />

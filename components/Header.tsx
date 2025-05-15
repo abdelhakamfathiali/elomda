@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SignInButton from "./SignInButton";
 import HeaderBottom from "./HeaderBottom";
-import SearchInput from "./SearchInput";
+
 const Header = async () => {
   return (
     <header className="bg-transparent sticky top-0 z-50">
@@ -19,10 +19,6 @@ const Header = async () => {
               priority
             />
           </Link>
-
-          <div className=" ">
-            <SearchInput />
-          </div>
         </div>
         <div className="flex flex-1 m-2 p-2 items-center justify-start  ">
           <Link href={"/signIn"}>

@@ -9,10 +9,10 @@ type Cat = {
 const CategoryCard = ({ category }: { category: Cat }) => {
   return (
     <div
-      className="border-2 flex h-full rounded-2xl shadow-2xl hover:border-amazonLight/30
-     bg whithe z-10 hoverEffct p-5
+      className="flex flex-col h-[600px] rounded-2xl shadow-2xl hover:border-amazonLight/30
+     bg whithe  hoverEffct   p-5 md:flex md:flex-row
     ">
-      <div className="flex items-center justify-center h-full flex-1  ">
+      <div className="flex items-center justify-center h-[10%] mt-2  md:h-full md:w-[200px]">
         <div className="flex items-center justify-center text-3xl font-semibold h-full w-full group underline ">
           <Link
             href={`/${category.name}`}
@@ -21,13 +21,13 @@ const CategoryCard = ({ category }: { category: Cat }) => {
           </Link>
         </div>
       </div>
-      <div className="relative group overflow-hidden w-[85%] rounded-xl h-full">
+      <div className=" relative group overflow-hidden w-full h-[85%] rounded-xl ">
         <Link href={`/${category.name}`}>
           <Image
             src={category.imageUrl}
             alt={category.name}
             fill={true}
-            className="object-contain group-hover:scale-110 overflow-hidden hoverEffect"
+            className="object-contain md:object-cover group-hover:scale-110 overflow-hidden hoverEffect"
           />
         </Link>
       </div>
