@@ -3,73 +3,24 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function Signup() {
-  const [username, setUsername] = useState("");
+export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [pending, setPending] = useState();
-  const [error, setError] = useState("");
-  const router = useRouter();
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!username || !email || !password) {
-      setError("All fields are required");
-      return;
-    }
-
-    try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          email,
-          password,
-        }),
-      });
-      if (res) {
-        const form = e.target;
-        (e.target as HTMLFormElement).reset();
-        router.push("/");
-      }
-    } catch (error) {}
-  };
 
   return (
     <div className=" mt-4 sm:mx-auto sm:w-full sm:max-w-xl shadow-xl">
       <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10 border">
-        <form onSubmit={handleSubmit} className="mb-0 space-y-6 ">
+        <form className="mb-0 space-y-6 ">
           <div className="w-full flex items-center justify-center flex-col">
             <h1 className="text-3xl color-amazonBlue">Create Your Account </h1>
             <div className="flex gap-4">
-              <p className="text-lg">already have account ?</p>
-              <Link href="/signIn" className="text-lg text-blue-950">
-                Sign in
+              <p className="text-lg">Don't have account ?</p>
+              <Link href="/register" className="text-lg text-blue-950">
+                Sign Up
               </Link>
             </div>
           </div>
-          <div>
-            <label
-              htmlFor="username"
-              className="block text-lg font-medium text-gray-700">
-              username
-            </label>
-            <div className="mt-1">
-              <input
-                id="username"
-                name="username"
-                type="text"
-                autoComplete="name"
-                required
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full border border-gray-300 px-3 py-2 rounded-lg shodow-sm focus:outline-none
-                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
-              />
-            </div>
-          </div>
+          <div></div>
           <div>
             <label
               htmlFor="email"
@@ -113,7 +64,7 @@ export default function Signup() {
             border-transparent rounded-md shadow-sm text-md font-medium bg-amazonBlue
              text-white hover:bg-amazonLight/50 focus:outline-none
              focus:ring-2 focus:ring-offset-2 focus:ring-amazonBlue-500">
-            Sign Up
+            Sign In
           </button>
         </form>
       </div>

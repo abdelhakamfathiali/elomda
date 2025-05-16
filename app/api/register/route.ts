@@ -6,9 +6,17 @@ import bcrypt from "bcryptjs";
 export async function POST(request: Request) {
   try {
     const { username, email, password } = await request.json();
+
     const hashedPassword = await bcrypt.hash(password, 10);
     await connectToDatabase();
-    await User.create({ username, email, password: hashedPassword });
+    console.log(username);
+    console.log(email);
+    console.log(password);
+    await User.create({
+      username,
+      email,
+      password: hashedPassword,
+    });
 
     return NextResponse.json({ message: "User registered" });
   } catch (error) {

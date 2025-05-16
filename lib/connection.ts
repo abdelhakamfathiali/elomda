@@ -1,20 +1,9 @@
 import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGO;
-
-if (!MONGODB_URI) {
-  throw new Error(" please define mongo environment variable");
-}
-
 async function connectToDatabase() {
-  if (mongoose.connection.readyState === 1) {
-    console.log("ready database");
-    return mongoose;
-  }
-  const opts = {
-    bufferCommands: false,
-  };
-  await mongoose.connect(MONGODB_URI!, opts);
+  await mongoose.connect(MONGODB_URI!);
+  console.log(MONGODB_URI);
   return mongoose;
 }
 

@@ -34,7 +34,7 @@ export default function RootLayout({
                 <AppSidebar className="" />
               </div>
               <div className="flex w-full h-full flex-col justify-center  p-2 ">
-                <div className="w-full h-full p-5">{children}</div>
+                <div className=" p-5 h-full">{children}</div>
 
                 <Footer />
               </div>
