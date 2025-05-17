@@ -13,22 +13,24 @@ export default async function Home() {
           <CategoryList category={data} />
         </div>
       </div>
-      <div className=" sm:hidden md:flex flex-col h-[1000px] w-[300px]  gap-10  p-5 ">
-        <div className="relative  flex  p-5 h-[23%] w-full ">
+      <div className="  sm:hidden md:flex flex-col h-full w-[320px] gap-10  p-5 ">
+        <div className="relative flex p-5 w-full h-[400px] ">
           <Image
-            src={"/logo.jpg"}
+            src={"/omda.png"}
             alt="logo"
             fill={true}
-            className="rounded-full"
+            className="rounded-full object-contain"
           />
         </div>
         <div className="h-[50%] flex flex-col items-center gap-10 p-5 ">
           <span className="w-full text-3xl   p-2 text-center">
             Takhtit <br />
           </span>
-          && <br />
-          Elomda <br />
-          group
+          <br />
+          <span className="w-full text-3xl   p-2 text-center">
+            Elomda <br />
+          </span>
+          <span className="w-full text-3xl   p-2 text-center">group</span>
         </div>
       </div>
     </div>

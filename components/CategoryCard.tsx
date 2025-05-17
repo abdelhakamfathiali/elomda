@@ -12,7 +12,7 @@ const CategoryCard = ({ category }: { category: Cat }) => {
       className="flex flex-col h-[600px] rounded-2xl shadow-2xl hover:border-amazonLight/30
      bg whithe  hoverEffct   p-5 md:flex md:flex-row
     ">
-      <div className="flex items-center justify-center h-[10%] mt-2  md:h-full md:w-[200px]">
+      <div className="sm:flex sm:flex-col  md:flex md:flex-col flex items-center justify-center h-[10%] mt-2  md:h-full md:w-[200px]">
         <div className="flex items-center justify-center text-3xl font-semibold h-full w-full group underline ">
           <Link
             href={`/${category.name}`}

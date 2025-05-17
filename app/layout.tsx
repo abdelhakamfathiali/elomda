@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Layout from "@/components/Layout";
-import Header from "@/components/Header";
+
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { auth } from "@/auth";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Takhtit Trading",
   description: "Elomda Group",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
+  console.log(session);
+  const user = session?.user;
+  console.log(user);
   return (
     <html lang="en">
       <head>
@@ -27,11 +33,11 @@ export default function RootLayout({
       </head>
       <body className={`antialiased`}>
         <Layout>
-          <Header />
-          <main className="w-full h-full  ">
+          <Navbar />
+          <main className="w-full h-full ">
             <SidebarProvider>
-              <div className=" sm:hidden md:hidden lg:inline-block h-full mt-0 ">
-                <AppSidebar className="" />
+              <div className="sm:hidden md:hidden lg:inline-block h-full  ">
+                <AppSidebar className="mt-1" />
               </div>
               <div className="flex w-full h-full flex-col justify-center  p-2 ">
                 <div className=" p-5 h-full">{children}</div>

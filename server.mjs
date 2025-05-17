@@ -2,7 +2,7 @@ import { createServer } from "http";
 import { parse } from "url";
 import next from "next";
 
-const port = parseInt(process.env.PORT || "3000", 10);
+const port = 85;
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -18,7 +18,7 @@ app.prepare().then(() => {
     } else {
       handle(req, res, parsedUrl);
     }
-  }).listen(port);
+  }).listen(85);
 
   console.log(
     `> Server listening at http://localhost:${port} as ${

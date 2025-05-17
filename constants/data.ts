@@ -19,16 +19,7 @@ export const footerData = [
       },
     ],
   },
-  {
-    _id: 2223,
-    title: "Amazon Payment Products",
-    listItem: [
-      {
-        _id: "003",
-        listData: [],
-      },
-    ],
-  },
+
   {
     _id: 2224,
     title: "Let Us Help You",

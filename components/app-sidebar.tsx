@@ -113,30 +113,6 @@ const data = {
         },
       ],
     },
-
-    {
-      title: "Settings",
-      url: "/Settings",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
   ],
   projects: [
     {
@@ -159,8 +135,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props} className="mt-[140px] ">
-      <SidebarHeader>{/* <TeamSwitcher teams={data.teams} /> */}</SidebarHeader>
+    <Sidebar collapsible="icon" {...props} className="mt-[116px]  ">
       <SidebarContent>
         <NavMain items={data.navMain} />
 

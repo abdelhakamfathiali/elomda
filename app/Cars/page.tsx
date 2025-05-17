@@ -19,7 +19,7 @@ const Cars = () => {
               Buy a Car
             </Link>
             <Link
-              href="/Cars/carsForm"
+              href="/Cars/sellCar"
               className="p-2 text-xl md:text-3xl bg-blue-950 rounded-full md:p-6 text-white">
               Sell a Car
             </Link>

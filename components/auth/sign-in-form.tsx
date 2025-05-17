@@ -10,7 +10,7 @@ export default function SignIn() {
   return (
     <div className=" mt-4 sm:mx-auto sm:w-full sm:max-w-xl shadow-xl">
       <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10 border">
-        <form className="mb-0 space-y-6 ">
+        <form className="mb-0 space-y-6 " method="POST">
           <div className="w-full flex items-center justify-center flex-col">
             <h1 className="text-3xl color-amazonBlue">Create Your Account </h1>
             <div className="flex gap-4">
@@ -29,9 +29,10 @@ export default function SignIn() {
             </label>
             <div className="mt-1">
               <input
+                placeholder="Email"
                 id="email"
                 name="email"
-                type="text"
+                type="email"
                 autoComplete="email"
                 required
                 onChange={(e) => setEmail(e.target.value)}
@@ -50,6 +51,7 @@ export default function SignIn() {
               id="password"
               name="password"
               type="password"
+              placeholder="Password"
               autoComplete="password"
               required
               onChange={(e) => setPassword(e.target.value)}
@@ -60,7 +62,7 @@ export default function SignIn() {
 
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border 
+            className="w-full flex justify-center py-2 px-4 border
             border-transparent rounded-md shadow-sm text-md font-medium bg-amazonBlue
              text-white hover:bg-amazonLight/50 focus:outline-none
              focus:ring-2 focus:ring-offset-2 focus:ring-amazonBlue-500">
