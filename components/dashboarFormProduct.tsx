@@ -1,37 +1,35 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
-export default function Signup() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function ProductForm() {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
 
   const [error, setError] = useState("");
   const router = useRouter();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!username || !email || !password) {
+    if (!name || !description || !quantity || !price) {
       setError("All fields are required");
-      return;
+      return error;
     }
 
     try {
-      const res = await fetch("/api/register", {
+      const res = await fetch("/api/product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username,
-          email,
-          password,
+          name,
+          description,
+          quantity,
+          price,
         }),
       });
-      if (error) {
-        throw new Error(error);
-      }
       if (res) {
         router.push("/");
       }
@@ -41,32 +39,26 @@ export default function Signup() {
   };
 
   return (
-    <div className=" mt-4 sm:mx-auto sm:w-full sm:max-w-xl shadow-xl">
+    <div className=" mt-4 w-full  shadow-xl ">
       <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10 border">
         <form onSubmit={handleSubmit} className="mb-0 space-y-6 ">
           <div className="w-full flex items-center justify-center flex-col">
-            <h1 className="text-3xl color-amazonBlue">Create Your Account </h1>
-            <div className="flex gap-4">
-              <p className="text-lg">already have account ?</p>
-              <Link href="/signIn" className="text-lg text-blue-950">
-                Sign in
-              </Link>
-            </div>
+            <h1 className="text-3xl color-amazonBlue">Add New Product </h1>
           </div>
           <div>
             <label
-              htmlFor="username"
+              htmlFor="name"
               className="block text-lg font-medium text-gray-700">
-              username
+              productName
             </label>
             <div className="mt-1">
               <input
-                id="username"
-                name="username"
+                id="name"
+                name="name"
                 type="text"
                 autoComplete="name"
                 required
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full border border-gray-300 px-3 py-2 rounded-lg shodow-sm focus:outline-none
                 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
               />
@@ -74,36 +66,51 @@ export default function Signup() {
           </div>
           <div>
             <label
-              htmlFor="email"
+              htmlFor="description"
               className="block text-lg font-medium text-gray-700">
-              email
+              description
             </label>
             <div className="mt-1">
               <input
-                id="email"
-                name="email"
+                id="description"
+                name="description"
                 type="text"
-                autoComplete="email"
+                autoComplete="description"
                 required
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
                 className="w-full border border-gray-300 px-3 py-2 rounded-lg shodow-sm focus:outline-none
                 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
               />
             </div>
           </div>
+
           <label
-            htmlFor="password"
+            htmlFor="quantity"
             className="block text-lg font-medium text-gray-700">
-            password
+            quantity
           </label>
           <div className="mt-1">
             <input
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="password"
+              id="quantity"
+              name="quantity"
+              type="text"
+              onChange={(e) => setQuantity(e.target.value)}
+              className="w-full border border-gray-300 px-3 py-2 rounded-lg shodow-sm focus:outline-none
+                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <label
+            htmlFor="price"
+            className="block text-lg font-medium text-gray-700">
+            Price
+          </label>
+          <div className="mt-1">
+            <input
+              id="price"
+              name="price"
+              type="text"
               required
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPrice(e.target.value)}
               className="w-full border border-gray-300 px-3 py-2 rounded-lg shodow-sm focus:outline-none
                 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
             />

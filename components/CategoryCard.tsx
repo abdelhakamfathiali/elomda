@@ -9,25 +9,23 @@ type Cat = {
 const CategoryCard = ({ category }: { category: Cat }) => {
   return (
     <div
-      className="flex flex-col h-[600px] rounded-2xl shadow-2xl hover:border-amazonLight/30
-     bg whithe  hoverEffct   p-5 md:flex md:flex-row
+      className="flex flex-col md:flex md:flex-row items-center h-[600px] rounded-2xl shadow-2xl hover:border-amazonLight/30
+     
     ">
-      <div className="sm:flex sm:flex-col  md:flex md:flex-col flex items-center justify-center h-[10%] mt-2  md:h-full md:w-[200px]">
-        <div className="flex items-center justify-center text-3xl font-semibold h-full w-full group underline ">
-          <Link
-            href={`/${category.name}`}
-            className=" text-amazonBlue capitalize">
-            {category.name}
-          </Link>
-        </div>
+      <div className="flex items-center justify-center text-2xl font-semibold  group  w-[20%] ">
+        <Link
+          href={`/${category.name}`}
+          className=" text-blue-800 font-bold capitalize bg-yellow-500 border-2 rounded-md p-4">
+          {category.name}
+        </Link>
       </div>
-      <div className=" relative group overflow-hidden w-full h-[85%] rounded-xl ">
+      <div className=" w-full relative group h-full overflow-hidden  md:h-[85%] rounded-xl ">
         <Link href={`/${category.name}`}>
           <Image
             src={category.imageUrl}
             alt={category.name}
             fill={true}
-            className="object-contain md:object-cover group-hover:scale-110 overflow-hidden hoverEffect"
+            className="object-contain md:object-cover "
           />
         </Link>
       </div>

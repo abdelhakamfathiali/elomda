@@ -35,6 +35,9 @@ export default {
         amazonGreen: "#7fda69",
         footerBg: "#232f3d",
       },
+      screens: {
+        sm: "500px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],

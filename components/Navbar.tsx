@@ -2,18 +2,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+  console.log(session);
   const [isClicked, setIsClicked] = useState(false);
   const toggleNavbar = (): void => {
     setIsClicked(!isClicked);
   };
   return (
     <nav className="bg-blue-800 text-white sticky top-0 z-50 mb-2">
-      <div className="max-w-7xl mx-auto px-8  sm:px-6 lg:px-8 ">
-        <div className="flex items-center justify-between  p-6">
-          <div className="flex items-center ">
-            <div className="flex-shrink-0 relative">
+      <div className=" mx-auto px-8 sm:px-6 lg:px-8 w-full ">
+        <div className="flex items-center  ">
+          <div className="flex items-center   ">
+            <div className="flex w-[200px] relative  justify-center ">
               <Link href={"/"} className="h-full  ">
                 <Image
                   src={"/omda.png"}
@@ -25,7 +28,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block  p-5">
             <div className="ml-4 flex items-center space-x-8">
               <Link
                 href={"/Cars"}
@@ -38,31 +41,41 @@ const Navbar = () => {
                 className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
                 Real Estate
               </Link>
-
               <Link
                 href={"/electronic"}
                 className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
                 Electronics
               </Link>
-
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <Link
+              href={"/register"}
+              className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
+              Register
+            </Link>
+            <Link
+              href={"/dashboard"}
+              className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
+              DASHBOARD
+            </Link>
+          </div>
+          <div>
+            {!session ? (
               <Link
-                href={"/signIn"}
+                href={"/api/auth/signin"}
                 className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
                 SignIn
               </Link>
-
+            ) : (
               <Link
-                href={"/register"}
+                href={"/electronic"}
                 className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-                Register
+                Signout
               </Link>
-            </div>
+            )}
           </div>
-          <Link
-            href={"/"}
-            className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-            English
-          </Link>
+
           <div className="md:hidden flex items-center">
             <button
               className="inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -112,29 +125,38 @@ const Navbar = () => {
                 </Link>
               </button>
 
-              <Link
-                href={"/Real-Estate"}
-                className="text-white block hover:bg-white hover:text-black rounded-lg p-4 text-3xl w-full">
-                Real Estate
-              </Link>
+              <button onClick={toggleNavbar} className=" h-full">
+                <Link
+                  href={"/Real-Estate"}
+                  className="text-white block hover:bg-white hover:text-black rounded-lg ml-10 p-4 text-3xl w-full">
+                  Real Estate
+                </Link>
+              </button>
 
-              <Link
-                href={"/electronic"}
-                className="text-white block hover:bg-white hover:text-black rounded-lg p-4 text-3xl w-full">
-                Electronics
-              </Link>
+              <button onClick={toggleNavbar} className=" h-full">
+                <Link
+                  href={"/electronic"}
+                  className="text-white block hover:bg-white hover:text-black rounded-lg ml-10 p-4 text-3xl w-full">
+                  Electronic
+                </Link>
+              </button>
 
-              <Link
-                href={"/signIn"}
-                className="text-white block hover:bg-white hover:text-black rounded-lg p-4 text-3xl w-full">
-                SignIn
-              </Link>
+              <button onClick={toggleNavbar} className=" h-full">
+                <Link
+                  href={"/signIn"}
+                  className="text-white block hover:bg-white hover:text-black rounded-lg ml-10 p-4 text-3xl w-full">
+                  Sign In
+                </Link>
+              </button>
 
-              <Link
-                href={"/register"}
-                className="text-white block hover:bg-white hover:text-black rounded-lg p-4 text-3xl w-full">
-                Register
-              </Link>
+              <button onClick={toggleNavbar} className=" h-full">
+                <Link
+                  onClick={toggleNavbar}
+                  href={"/register"}
+                  className="text-white block hover:bg-white hover:text-black rounded-lg ml-10 p-4 text-3xl w-full">
+                  Register
+                </Link>
+              </button>
             </div>
           </div>
         </div>

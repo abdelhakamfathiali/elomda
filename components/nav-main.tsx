@@ -35,10 +35,10 @@ export function NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel className="text-2xl font-semibold mt-10">
+      <SidebarGroupLabel className="text-2xl font-semibold text-white ">
         Categories
       </SidebarGroupLabel>
-      <SidebarMenu className="text-xl">
+      <SidebarMenu className="text-xl text-white">
         {items.map((item) => (
           <Collapsible
             key={item.title}
@@ -53,7 +53,7 @@ export function NavMain({
                   {item.icon && <item.icon />}
                   <Link
                     href={`${item.url}`}
-                    className=" flex items-center text-2xl p-1 m-5 h-12 ">
+                    className=" flex items-center  text-2xl p-1 m-5 h-12 ">
                     {item.title}
                   </Link>
                   <ChevronRight className="size-[50px]  ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
@@ -64,7 +64,9 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={subItem.url} className="text-xl p-2 m-2">
+                        <a
+                          href={subItem.url}
+                          className="text-xl p-2 m-2 font-bold text-white">
                           <span>{subItem.title}</span>
                         </a>
                       </SidebarMenuSubButton>

@@ -3,10 +3,10 @@ import "./globals.css";
 import Layout from "@/components/Layout";
 
 import Footer from "@/components/Footer";
-import { Toaster } from "react-hot-toast";
+
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-import { auth } from "@/auth";
+
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -19,10 +19,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
-  console.log(session);
-  const user = session?.user;
-  console.log(user);
   return (
     <html lang="en">
       <head>
@@ -37,7 +33,7 @@ export default async function RootLayout({
           <main className="w-full h-full ">
             <SidebarProvider>
               <div className="sm:hidden md:hidden lg:inline-block h-full  ">
-                <AppSidebar className="mt-1" />
+                <AppSidebar className="mt-1 bg-blue-800" />
               </div>
               <div className="flex w-full h-full flex-col justify-center  p-2 ">
                 <div className=" p-5 h-full">{children}</div>
@@ -46,16 +42,6 @@ export default async function RootLayout({
               </div>
             </SidebarProvider>
           </main>
-
-          <Toaster
-            position="bottom-right"
-            toastOptions={{
-              style: {
-                background: "#000000",
-                color: "#ffffff",
-              },
-            }}
-          />
         </Layout>
       </body>
     </html>

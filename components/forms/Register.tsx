@@ -21,12 +21,15 @@ export default function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmai] = useState("");
   const [password, setPassword] = useState("");
-  const [pending, setPending] = useState();
+  const [pending, setPending] = useState(true);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const res = await axios.post("/api/register");
     console.log(res);
+    if (res) {
+      setPending(false);
+    }
   };
   return (
     <div className="w-full">

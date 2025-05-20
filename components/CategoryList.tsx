@@ -11,7 +11,7 @@ interface Props {
   className?: string;
 }
 
-const CategoryList = ({ category, className }: Props) => {
+const CategoryList = ({ category }: Props) => {
   return (
     <div className="w-full flex flex-col gap-5 h-full p-5   ">
       {category.map((item) => (

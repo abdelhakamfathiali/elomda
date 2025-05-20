@@ -1,6 +1,6 @@
 import React from "react";
 import TestemonialSection from "@/components/testemonial";
-import Button from "@/components/CustomButton";
+
 import Link from "next/link";
 const CarsDetails = () => {
   return (

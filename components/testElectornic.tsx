@@ -1,15 +1,20 @@
-import { Car } from "@/type";
+import { Electronic } from "@/type";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const TestCard = ({ thumbnail, price, description }: Car) => {
+const TestElectronic = ({
+  thumbnail,
+  price,
+  description,
+  title,
+}: Electronic) => {
   return (
     <div className="border border-gray-200 w-full h-full rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-      <div className="relative w-full min-h-[350px]">
+      <div className="relative w-full min-h-[350px] ">
         <Link href="#">
           <Image
-            className="rounded-t-lg object-contain md:object-cover "
+            className="rounded-t-lg object-contain h-full "
             src={`${thumbnail}`}
             alt="kimo"
             fill={true}
@@ -19,12 +24,11 @@ const TestCard = ({ thumbnail, price, description }: Car) => {
       <div className="p-5">
         <Link href="#">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {description}
+            {title}
           </h5>
         </Link>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order.
+          {description}
         </p>
         <Link
           href="#"
@@ -45,10 +49,10 @@ const TestCard = ({ thumbnail, price, description }: Car) => {
             />
           </svg>
         </Link>
-        <h2>{price}</h2>
+        <h2>{`${price} $`}</h2>
       </div>
     </div>
   );
 };
 
-export default TestCard;
+export default TestElectronic;

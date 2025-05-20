@@ -1,71 +1,243 @@
 import React from "react";
-import FormSearch from "@/components/FormSearch";
-import { PiBuildingApartmentLight } from "react-icons/pi";
 import Image from "next/image";
+import { MdCall, MdEmail } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 const RealEstatePage = () => {
-  const data = [
-    {
-      title: "Your next property is here.",
-      subTitle: "Let's find a home that's perfect for you",
-      id: 0,
-      name: [
-        {
-          id: 0,
-          name: "Purpose",
-          element: [
-            { id: 0, title: "SELL" },
-            { id: 1, title: "BUY" },
-            { id: 2, title: "RENT" },
-          ],
-        },
-        {
-          id: 1,
-          name: "Location",
-          element: [
-            { id: 0, title: "caior" },
-            { id: 1, title: "Assuit" },
-          ],
-        },
-        {
-          id: 2,
-          name: "Property type",
-          element: [
-            { id: 0, title: "apartment" },
-            { id: 1, title: "commercial" },
-            { id: 2, title: "villa" },
-          ],
-        },
-      ],
-    },
-  ];
   return (
-    <div className="w-full h-full ">
-      <div className="flex flex-col gap-2 w-full h-full  bg-gray-600 rounded-3xl ">
+    <div className="w-full h-full flex flex-col">
+      <div className="flex flex-col gap-2 w-full    rounded-3xl  ">
         <div className="w-full h-[600px]  sm:h-[700px] relative rounded-xl mb-5">
           <Image
             src={"/house5.jpeg"}
             alt="kimo"
             fill={true}
             priority
-            className=" mix-blend-overlay rounded-3xl "
+            className="  rounded-3xl "
           />
 
-          <div className="absolute top-24  w-full h-[450px] sm:h-full p-5 items-center justify-center">
-            <FormSearch data={data} />
+          <div className="absolute top-3/4  w-full h-[450px] sm:h-full p-5 items-center justify-center">
+            {/* <FormSearch data={data} /> */}
+            <div className="absolute w-full flex items-center justify-start gap-8 p-5">
+              <Link
+                href="/Real-Estate/apartmentDetails"
+                className="px-8 text-xl md:text-3xl bg-transparent rounded-lg md:py-2 text-white hover:bg-orange-500">
+                Buy
+              </Link>
+              <Link
+                href="/Real-Estate/apartmentSell"
+                className="px-8 text-xl md:text-3xl bg-transparent rounded-lg md:py-2 text-white hover:bg-orange-500">
+                Sell
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      <div className="w-full h-full p-2  shadow-xl mt-2 grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 sm:w-full gap-4 ">
-        <div className="max-w-full rounded-xl h-[150px] flex gap-5 justify-around p-4 bg-blue-800 text-white font-semibold items-center">
-          <p className="text-2xl uppercase">buy</p>
-          <PiBuildingApartmentLight className="size-16" />
+      <div className=" flex flex-col gap-4 mt-5 ">
+        <div
+          className="flex h-[600px]  flex-col w-full md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+        md:flex-row p-5  border overflow-hidden  ">
+          <Image
+            src={"/apartmen2.webp"}
+            width={400}
+            height={340}
+            alt="home"
+            className="object-cover w-full h-[50%] md:h-full  "
+          />
+          <div className="w-full flex flex-col gap-4  bg-gray-50 p-4 items-center justify-around">
+            <span className="text-2xl"> {`EGP : `}150000 </span>
+            <div className="grid grid-cols-3 gap-6 w-full  ">
+              <p>Aparment</p>
+              <p>More Details</p>
+              <p>
+                {" "}
+                <span className="font-bold">Area</span>:140 Sq.M.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col gap-2 items-start">
+              <span> Location and More Details</span>
+              <Link
+                href={"/Real-Estate/apartment-details"}
+                className="text-xl text-blue-800">
+                {" "}
+                give her the address and link to details if found
+              </Link>
+              <div className=" w-full flex gap-10 justify-between items-center mt-5">
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdEmail />
+                  Email
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdCall />
+                  call
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <FaWhatsapp />
+                  WhatsUp
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="max-w-full rounded-xl h-[150px] flex p-4 bg-blue-500 text-white font-semibold items-center">
-          <p className="text-2xl uppercase">sell</p>
+        <div
+          className="flex h-[600px]  flex-col w-full  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+        md:flex-row p-5  border overflow-hidden  ">
+          <Image
+            src={"/apartment3.jpg"}
+            width={400}
+            height={340}
+            alt="home"
+            className="object-cover w-full h-[50%] md:h-full  "
+          />
+          <div className="w-full flex flex-col gap-10  bg-gray-50 p-4 items-center justify-around">
+            <span className="text-2xl"> {`EGP : `}150000 </span>
+            <div className="grid grid-cols-3 gap-6 w-full  ">
+              <p>Aparment</p>
+              <p>More Details</p>
+              <p>
+                {" "}
+                <span className="font-bold">Area</span>:140 Sq.M.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col gap-4 items-start">
+              <span> Location and More Details</span>
+              <Link
+                href={"/Real-Estate/apartment-details"}
+                className="text-xl text-blue-800">
+                {" "}
+                give her the address and link to details if found
+              </Link>
+              <div className=" w-full flex gap-10 justify-between items-center mt-5">
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdEmail />
+                  Email
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdCall />
+                  call
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <FaWhatsapp />
+                  WhatsUp
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="max-w-full rounded-xl h-[150px] flex p-4 bg-blue-800 text-white font-semibold items-center">
-          <p className="text-2xl uppercase">rent</p>
+        <div
+          className="flex h-[600px]  flex-col w-full  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+        md:flex-row p-5  border overflow-hidden  ">
+          <Image
+            src={"/apartmen2.webp"}
+            width={400}
+            height={340}
+            alt="home"
+            className="object-cover w-full h-[50%] md:h-full  "
+          />
+          <div className="w-full flex flex-col gap-10  bg-gray-50 p-4 items-center justify-around">
+            <span className="text-2xl"> {`EGP : `}150000 </span>
+            <div className="grid grid-cols-3 gap-6 w-full  ">
+              <p>Aparment</p>
+              <p>More Details</p>
+              <p>
+                {" "}
+                <span className="font-bold">Area</span>:140 Sq.M.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col gap-4 items-start">
+              <span> Location and More Details</span>
+              <Link
+                href={"/Real-Estate/apartment-details"}
+                className="text-xl text-blue-800">
+                {" "}
+                give her the address and link to details if found
+              </Link>
+              <div className=" w-full flex gap-10 justify-between items-center mt-5">
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdEmail />
+                  Email
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdCall />
+                  call
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <FaWhatsapp />
+                  WhatsUp
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="flex h-[600px]  flex-col w-full  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+        md:flex-row p-5  border overflow-hidden  ">
+          <Image
+            src={"/apartment3.jpg"}
+            width={400}
+            height={340}
+            alt="home"
+            className="object-cover w-full h-[50%] md:h-full  "
+          />
+          <div className="w-full flex flex-col gap-10  bg-gray-50 p-4 items-center justify-around">
+            <span className="text-2xl"> {`EGP : `}150000 </span>
+            <div className="grid grid-cols-3 gap-6 w-full  ">
+              <p>Aparment</p>
+              <p>More Details</p>
+              <p>
+                {" "}
+                <span className="font-bold">Area</span>:140 Sq.M.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col gap-4 items-start">
+              <span> Location and More Details</span>
+              <Link
+                href={"/Real-Estate/apartment-details"}
+                className="text-xl text-blue-800">
+                {" "}
+                give her the address and link to details if found
+              </Link>
+              <div className=" w-full flex gap-10 justify-between items-center mt-5">
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdEmail />
+                  Email
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <MdCall />
+                  call
+                </Link>
+                <Link
+                  href="/"
+                  className="font-bold text-xl flex gap-2 items-center">
+                  <FaWhatsapp />
+                  WhatsUp
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,20 +1,21 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import Link from "next/link";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  console.log(email);
 
   return (
     <div className=" mt-4 sm:mx-auto sm:w-full sm:max-w-xl shadow-xl">
       <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10 border">
         <form className="mb-0 space-y-6 " method="POST">
           <div className="w-full flex items-center justify-center flex-col">
-            <h1 className="text-3xl color-amazonBlue">Create Your Account </h1>
+            <h1 className="text-3xl color-amazonBlue">Sign In </h1>
             <div className="flex gap-4">
-              <p className="text-lg">Don't have account ?</p>
+              <p className="text-lg">Dont have account ?</p>
               <Link href="/register" className="text-lg text-blue-950">
                 Sign Up
               </Link>
@@ -51,7 +52,7 @@ export default function SignIn() {
               id="password"
               name="password"
               type="password"
-              placeholder="Password"
+              placeholder={password}
               autoComplete="password"
               required
               onChange={(e) => setPassword(e.target.value)}

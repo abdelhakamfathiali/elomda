@@ -32,6 +32,21 @@ export type Car = {
   model?: string;
   quantity?: number | undefined;
 };
+export type Electronic = {
+  category?: string;
+  description?: string;
+  discountPercentage?: number;
+  id?: number;
+  images?: string[];
+  price: number;
+  rating?: number;
+  reviews?: Review[];
+  shippingInformation?: string;
+  thumbnail?: string;
+  model?: string;
+  quantity?: number | undefined;
+  title?: string;
+};
 
 export interface Session {
   user: {

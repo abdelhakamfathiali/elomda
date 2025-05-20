@@ -1,7 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
-import Button from "@/components/CustomButton";
+
 import TestemonialSection from "@/components/testemonial";
 import Link from "next/link";
 const Cars = () => {
@@ -10,8 +10,10 @@ const Cars = () => {
       {/* main section  /> */}
       <div className="grid grid-cols-1  md:grid-cols-2  items-center justify-center   gap-2 ">
         <div className="flex flex-col p-5   shadow-md h-[400px] justify-between bg-gray-100">
-          <span className="text-[48px] mt-16 ">Elomda && Trading</span>
-          <span className="text-xl ">Here you can find your dream car</span>
+          <span className="text-[48px] mt-16 font-bold">Elomda Group</span>
+          <span className="text-2xl font-bold ">
+            Here you can find your dream car
+          </span>
           <div className="w-full flex items-center justify-between gap-8 p-5">
             <Link
               href="/Cars/carsDetails"
@@ -31,7 +33,7 @@ const Cars = () => {
             src={"/pmw.png"}
             alt="car"
             fill={true}
-            className=" object-cover"
+            className=" object-contain md:object-cover"
           />
         </div>
       </div>
