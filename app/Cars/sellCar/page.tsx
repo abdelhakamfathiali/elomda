@@ -1,4 +1,4 @@
-import CustomSearch from "@/components/CustomSearch";
+import CustomSearch from "@/app/dashboard/SearchInput";
 
 import Image from "next/image";
 import React from "react";
@@ -23,19 +23,20 @@ const CarsForm = () => {
             <label htmlFor="model" className="text-2xl font-bold">
               Mark
             </label>
-            <CustomSearch title="Type mark" />
+            <CustomSearch placeholder="Type mark" />
           </div>
           <div className="flex gap-4 items-center ">
             <label htmlFor="model" className="text-2xl font-bold">
               model
             </label>
-            <CustomSearch title="Car Model" />
+            <CustomSearch placeholder="Car Model" />
           </div>
           <div className="flex gap-16 items-center ">
             <label htmlFor="model" className="text-2xl font-bold">
               Year
             </label>
-            <CustomSearch title="type year" />
+
+            <CustomSearch placeholder="type year" />
           </div>
           <div className="flex gap-16 items-center  p-5 col-span-2  ">
             <label htmlFor="model" className="text-2xl font-bold">

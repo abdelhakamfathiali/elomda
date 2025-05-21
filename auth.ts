@@ -1,4 +1,3 @@
-import { PlayCircle } from "lucide-react";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -13,10 +12,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         },
       },
       async authorize(credentials) {
+        console.log(credentials);
         let user = null;
         user = {
           id: "1",
-          username: "kimo",
+          user: "kimo",
           email: "kim@gmail.com",
         };
         if (!user) {

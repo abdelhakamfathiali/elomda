@@ -12,7 +12,7 @@ export const data = [
 
   {
     id: 5,
-    name: "Electronic",
+    name: "electronic",
     imageUrl: "/106.jpg",
   },
 ];

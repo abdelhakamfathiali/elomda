@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 
 const Navbar = () => {
   const { data: session } = useSession();
-  console.log(session);
+
   const [isClicked, setIsClicked] = useState(false);
   const toggleNavbar = (): void => {
     setIsClicked(!isClicked);
@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-800 text-white sticky top-0 z-50 mb-2">
       <div className=" mx-auto px-8 sm:px-6 lg:px-8 w-full ">
-        <div className="flex items-center  ">
+        <div className="flex items-center justify-between  ">
           <div className="flex items-center   ">
             <div className="flex w-[200px] relative  justify-center ">
               <Link href={"/"} className="h-full  ">
@@ -54,25 +54,29 @@ const Navbar = () => {
               className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
               Register
             </Link>
-            <Link
-              href={"/dashboard"}
-              className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-              DASHBOARD
-            </Link>
           </div>
           <div>
             {!session ? (
-              <Link
-                href={"/api/auth/signin"}
-                className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-                SignIn
-              </Link>
+              <div>
+                <Link
+                  href={"/api/auth/signin"}
+                  className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
+                  SignIn
+                </Link>
+              </div>
             ) : (
-              <Link
-                href={"/electronic"}
-                className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-                Signout
-              </Link>
+              <div>
+                <Link
+                  href={"/dashboard"}
+                  className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
+                  Dashboard
+                </Link>
+                <Link
+                  href={"/api/auth/signin"}
+                  className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
+                  signout
+                </Link>
+              </div>
             )}
           </div>
 

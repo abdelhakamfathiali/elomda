@@ -39,8 +39,8 @@ export default function ProductForm() {
   };
 
   return (
-    <div className=" mt-4 w-full  shadow-xl ">
-      <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10 border">
+    <div className=" mt-4 w-full  h-screen shadow-xl min-w-sm ">
+      <div className="bg-white py-8 px-1 shadow rounded-lg sm:px-10 border min-w-sm">
         <form onSubmit={handleSubmit} className="mb-0 space-y-6 ">
           <div className="w-full flex items-center justify-center flex-col">
             <h1 className="text-3xl color-amazonBlue">Add New Product </h1>
@@ -115,15 +115,16 @@ export default function ProductForm() {
                 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
             />
           </div>
-
-          <button
-            type="submit"
-            className="w-full flex justify-center py-2 px-4 border 
+          <div className="flex items-center justify-center">
+            <button
+              type="submit"
+              className=" flex justify-center py-2 px-4 border w-1/2 
             border-transparent rounded-md shadow-sm text-md font-medium bg-amazonBlue
              text-white hover:bg-amazonLight/50 focus:outline-none
              focus:ring-2 focus:ring-offset-2 focus:ring-amazonBlue-500">
-            Sign Up
-          </button>
+              Add Product
+            </button>
+          </div>
         </form>
       </div>
     </div>
