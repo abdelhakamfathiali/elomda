@@ -7,10 +7,10 @@ import Link from "next/link";
 const RealEstatePage = () => {
   return (
     <div className="w-full h-full flex flex-col">
-      <div className="flex flex-col gap-2 w-full    rounded-3xl  ">
-        <div className="w-full h-[600px]  sm:h-[700px] relative rounded-xl mb-5">
+      <div className="flex flex-col gap-2 w-full  items-center justify-center  rounded-3xl  ">
+        <div className="w-[98%] h-[500px] flex items-center justify-center  sm:h-[700px] relative rounded-xl mb-5 p-1">
           <Image
-            src={"/house5.jpeg"}
+            src={"/house2.jpg"}
             alt="kimo"
             fill={true}
             priority
@@ -34,9 +34,9 @@ const RealEstatePage = () => {
           </div>
         </div>
       </div>
-      <div className=" flex flex-col gap-4 mt-5 ">
+      <div className=" flex flex-col gap-4 mt-5 items-center justify-center ">
         <div
-          className="flex h-[600px]  flex-col w-full md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+          className="flex h-[600px]  flex-col w-[95%] md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
         md:flex-row p-5  border overflow-hidden  ">
           <Image
             src={"/apartmen2.webp"}
@@ -87,7 +87,7 @@ const RealEstatePage = () => {
           </div>
         </div>
         <div
-          className="flex h-[600px]  flex-col w-full  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+          className="flex h-[600px]  flex-col w-[95%]  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
         md:flex-row p-5  border overflow-hidden  ">
           <Image
             src={"/apartment3.jpg"}
@@ -138,7 +138,7 @@ const RealEstatePage = () => {
           </div>
         </div>
         <div
-          className="flex h-[600px]  flex-col w-full  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+          className="flex h-[600px]  flex-col w-[95%]  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
         md:flex-row p-5  border overflow-hidden  ">
           <Image
             src={"/apartmen2.webp"}
@@ -189,7 +189,7 @@ const RealEstatePage = () => {
           </div>
         </div>
         <div
-          className="flex h-[600px]  flex-col w-full  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
+          className="flex h-[600px]  flex-col w-[95%]  md:h-[500px] gap-4 rounded-md  border-blue-500 md:flex 
         md:flex-row p-5  border overflow-hidden  ">
           <Image
             src={"/apartment3.jpg"}

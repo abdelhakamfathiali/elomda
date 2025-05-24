@@ -13,7 +13,7 @@ interface Props {
 
 const CategoryList = ({ category }: Props) => {
   return (
-    <div className="w-full flex flex-col gap-5 h-full p-5   ">
+    <div className="w-full flex flex-col gap-5 h-full    ">
       {category.map((item) => (
         <CategoryCard key={item.id} category={item} />
       ))}

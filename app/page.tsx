@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CategoryList from "@/components/CategoryList";
 import Image from "next/image";
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="flex  h-full">
       <div className="flex flex-col h-full items-center justify-center w-full   ">
@@ -13,8 +13,8 @@ export default async function Home() {
           <CategoryList category={data} />
         </div>
       </div>
-      <div className="  hidden md:hidden  md:flex-col lg:flex lg:flex-col h-full w-[500px] gap-10  p-5 ">
-        <div className="relative flex  w-full h-[400px]">
+      <div className="  hidden md:hidden  md:flex-col lg:flex lg:flex-col h-full w-[400px] gap-10  p-5 ">
+        <div className="relative flex  w-[380px] h-[400px]">
           <Image
             src={"/omda.png"}
             alt="logo"

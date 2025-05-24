@@ -19,7 +19,7 @@ const CategoryCard = ({ category }: { category: Cat }) => {
           {category.name}
         </Link>
       </div>
-      <div className=" w-full relative group h-full overflow-hidden  md:h-[85%] rounded-xl ">
+      <div className=" w-[90%] relative group h-full overflow-hidden  md:h-[85%] rounded-xl mr-4">
         <Link href={`/${category.name}`}>
           <Image
             src={category.imageUrl}

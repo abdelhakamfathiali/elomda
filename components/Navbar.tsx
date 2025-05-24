@@ -2,11 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useSession } from "next-auth/react";
 
 const Navbar = () => {
-  const { data: session } = useSession();
-
   const [isClicked, setIsClicked] = useState(false);
   const toggleNavbar = (): void => {
     setIsClicked(!isClicked);
@@ -55,29 +52,13 @@ const Navbar = () => {
               Register
             </Link>
           </div>
+          <div></div>
           <div>
-            {!session ? (
-              <div>
-                <Link
-                  href={"/api/auth/signin"}
-                  className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-                  SignIn
-                </Link>
-              </div>
-            ) : (
-              <div>
-                <Link
-                  href={"/dashboard"}
-                  className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-                  Dashboard
-                </Link>
-                <Link
-                  href={"/api/auth/signin"}
-                  className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
-                  signout
-                </Link>
-              </div>
-            )}
+            <Link
+              href={"/dashboard"}
+              className="text-white hover:bg-white hover:text-black rounded-lg p-4 text-3xl">
+              Dashboard
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -147,7 +128,7 @@ const Navbar = () => {
 
               <button onClick={toggleNavbar} className=" h-full">
                 <Link
-                  href={"/signIn"}
+                  href={"/auth/signin"}
                   className="text-white block hover:bg-white hover:text-black rounded-lg ml-10 p-4 text-3xl w-full">
                   Sign In
                 </Link>

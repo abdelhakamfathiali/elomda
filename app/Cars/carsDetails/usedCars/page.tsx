@@ -5,22 +5,6 @@ const UsedCars = () => {
   return (
     <div className="w-full h-full ">
       <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
-      <TestemonialSection />
     </div>
   );
 };

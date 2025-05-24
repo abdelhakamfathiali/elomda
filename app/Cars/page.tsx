@@ -1,14 +1,15 @@
 import React from "react";
 
 import Image from "next/image";
+import Cars from "@/components/FetchCars";
 
-import TestemonialSection from "@/components/testemonial";
+// import TestemonialSection from "@/components/testemonial";
 import Link from "next/link";
-const Cars = () => {
+const Cars1 = async () => {
   return (
-    <div className="h-full w-full  overflow-hidden flex flex-col gap-5 mt-2">
+    <div className="h-full w-full  overflow-hidden flex flex-col gap-5 mt-2 items-center justify-center">
       {/* main section  /> */}
-      <div className="grid grid-cols-1  md:grid-cols-2  items-center justify-center   gap-2 ">
+      <div className="grid grid-cols-1  md:grid-cols-2  items-center justify-center   gap-2 w-full ">
         <div className="flex flex-col p-5   shadow-md h-[400px] justify-between bg-gray-100">
           <span className="text-[48px] mt-16 font-bold">Elomda Group</span>
           <span className="text-2xl font-bold ">
@@ -37,11 +38,12 @@ const Cars = () => {
           />
         </div>
       </div>
-      <div className=" flex items-center justify-between w-full   bg-gray-50  shadow-2xl border-2 p-5">
+      {/* <div className=" flex items-center justify-between w-full   bg-gray-50  shadow-2xl border-2 p-5">
         <TestemonialSection />
-      </div>
+      </div> */}
+      <Cars />
     </div>
   );
 };
 
-export default Cars;
+export default Cars1;

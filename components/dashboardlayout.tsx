@@ -7,12 +7,7 @@ const Dashboardlayout = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill", url: "/dashboard" },
-    { title: "product", src: "Chat", url: "/dashboard/product" },
-    {
-      title: "Users ",
-      src: "Calendar",
-      url: "dashboard/users",
-    },
+    { title: "cars", src: "Chat", url: "/dashboard/cars/addCar/new" },
     {
       title: "categories",
       src: "User",
@@ -22,12 +17,12 @@ const Dashboardlayout = () => {
     {
       title: "accessories ",
       src: "Calendar",
-      url: "dashboard/accessories",
+      url: "/dashboard/accessories",
     },
   ];
 
   return (
-    <div className=" flex ">
+    <div className=" hidden md:flex ">
       <div
         className={` ${
           open ? "w-72" : "w-20 "
@@ -61,29 +56,27 @@ const Dashboardlayout = () => {
         </div>
         <ul className="pt-6 ">
           {Menus.map((Menu, index) => (
-            <>
-              <Link href={`${Menu.url}`} key={index}>
-                <li
-                  key={index}
-                  className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-900 text-md items-center gap-x-4 
+            <Link href={`${Menu.url}`} key={index}>
+              <li
+                key={index}
+                className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-900 text-md items-center gap-x-4 
               ${Menu.gap ? "mt-9" : "mt-2"} ${index && "bg-blue-500"} `}>
-                  <div>
-                    <Image
-                      alt="icons"
-                      src={`/${Menu.src}.png`}
-                      width={40}
-                      height={40}
-                    />
-                  </div>
-                  <div
-                    className={`${
-                      !open && "hidden"
-                    } origin-left duration-200 text-xl`}>
-                    {Menu.title}
-                  </div>
-                </li>
-              </Link>
-            </>
+                <div>
+                  <Image
+                    alt="icons"
+                    src={`/${Menu.src}.png`}
+                    width={40}
+                    height={40}
+                  />
+                </div>
+                <div
+                  className={`${
+                    !open && "hidden"
+                  } origin-left duration-200 text-xl`}>
+                  {Menu.title}
+                </div>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
